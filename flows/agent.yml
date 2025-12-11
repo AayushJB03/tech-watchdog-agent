@@ -14,12 +14,12 @@ tasks:
     model: 
       type: io.kestra.plugin.ai.provider.GoogleGemini
       modelName: gemini-1.5-flash
-      apiKey: "{{ secret('AIzaSyAxhPQHjvgsf-MZ-4VZPLuCvVG91j0n3yU') }}"
+      apiKey: "{{ secret('GEMINI_API_KEY') }}"
     
     # These are the "HANDS" (Tools)
     tools:
       - type: io.kestra.plugin.ai.tool.TavilyWebSearch
-        apiKey: "{{ secret('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') }}"
+        apiKey: "{{ secret('TAVILY_API_KEY') }}"
         maxResults: 5
 
     # The "INSTRUCTIONS"
