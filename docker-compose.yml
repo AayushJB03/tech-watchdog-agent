@@ -1,0 +1,20 @@
+version: "3.11"
+
+services:
+  kestra:
+    image: kestra/kestra:latest
+    container_name: kestra_hackathon
+    ports:
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp:/tmp
+      # This maps your local "flows" folder to Kestra,
+      # making it easier to import them later.
+      - ./flows:/opt/kestra/flows
+    environment:
+      KESTRA_CONFIGURATION: |
+        kestra:
+          server:
+            basic-auth:
+              enabled: false
